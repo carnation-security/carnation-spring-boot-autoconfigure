@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'com.violetfreesia'
+version '1.0.4'
+sourceCompatibility = 8
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenLocal()
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.violetfreesia:carnation-core:1.0.4'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.1'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis:2.5.1'
+    implementation 'org.apache.commons:commons-pool2:2.6.0'
+
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor:2.5.1'
+    compileOnly 'com.google.code.findbugs:annotations:3.0.1'
+
+}
+
+java {
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
