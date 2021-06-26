@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.violetfreesia'
-version '1.0.4'
+version '1.0.5'
 sourceCompatibility = 8
 
 configurations {
@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.violetfreesia:carnation-core:1.0.4'
+    implementation 'com.github.carnation-security:carnation-core:1.0.4'
     implementation 'org.springframework.boot:spring-boot-starter-web:2.5.1'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis:2.5.1'
     implementation 'org.apache.commons:commons-pool2:2.6.0'
